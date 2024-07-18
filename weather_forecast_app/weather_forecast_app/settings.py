@@ -67,10 +67,11 @@ INSTALLED_APPS = [
     "debug_toolbar",
     "whitenoise.runserver_nostatic",
     "rest_framework",
-    # "django_filters",
-    # "rest_framework.authtoken",
-    # "djoser",
+    "django_filters",
+    "rest_framework.authtoken",
+    "djoser",
 
+    "authorization.apps.AuthorizationConfig",
     "forecast.apps.ForecastConfig",
     # "authorization.apps.AuthorizationConfig",
     # "customer_statistics.apps.CustomerStatisticsConfig",
@@ -207,8 +208,8 @@ REST_FRAMEWORK = {
 
 # LOGIN_REDIRECT_URL
 
-# LOGIN_REDIRECT_URL = reverse_lazy("customer_statistics:statistics")
-# LOGIN_URL = reverse_lazy("authorization:login")
+LOGIN_REDIRECT_URL = reverse_lazy("forecast:request_city_from_user")
+LOGIN_URL = reverse_lazy("authorization:login")
 
 
 # Logger

@@ -24,8 +24,8 @@ from rest_framework.routers import DefaultRouter
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('', include('authorization.urls')),
-    path('', include('forecast.urls')),
+    path('auth/', include('authorization.urls')),
+    path('/', include('forecast.urls')),
     # path('statistics/', include('customer_statistics.urls')),
     # path('services/', include('services.urls')),
     # path('advertising-companies/', include('advertising_companies.urls')),
