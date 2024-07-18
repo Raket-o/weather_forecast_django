@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Forecast for the near future
+{% endblock %}
+
+{% block name_page %}
+    Forecast for the near future
+{% endblock %}
+
+{% block body %}
+    <h3>Hour:</h3>
+    <div>
+        <ol>
+            {% for city in cities_list %}
+<!--                <li>-->
+                    <div class="list_obj">
+                        <div class="list_obj_name">
+                            Страна- {{city.country}},
+                            область- {{city.admin1}},
+                            {{city.name}}
+                        </div>
+                    </div>
+<!--                </li>-->
+<!--            {% empty %} Enter the city-->
+            {% endfor %}
+        </ol>
+    </div>
+
+{% endblock %}

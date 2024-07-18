@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+<!--    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+    <title>
+        {% block title %}
+        {% endblock %}
+    </title>
+</head>
+
+<body>
+<!--<div class="workspace">-->
+    {% block body %}
+    {% endblock %}
+<!--</div>-->
+
+<!--<footer>-->
+<!--    <div class="def_year">-->
+<!--        @2024-->
+<!--    </div>-->
+<!--</footer>-->
+
+</body>
+</html>
