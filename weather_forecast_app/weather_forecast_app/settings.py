@@ -68,8 +68,8 @@ INSTALLED_APPS = [
     "whitenoise.runserver_nostatic",
     "rest_framework",
     "django_filters",
-    "rest_framework.authtoken",
-    "djoser",
+    # "rest_framework.authtoken",
+    # "djoser",
 
     "authorization.apps.AuthorizationConfig",
     "forecast.apps.ForecastConfig",
@@ -83,6 +83,7 @@ INSTALLED_APPS = [
 
 
 MIDDLEWARE = [
+    "weather_forecast_app.middleware.CommonMiddlewareAppendSlashWithoutRedirect",
     "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -92,6 +93,9 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "debug_toolbar.middleware.DebugToolbarMiddleware",
+
+    # "CommonMiddleware",
+
 ]
 
 ROOT_URLCONF = "weather_forecast_app.urls"
@@ -236,4 +240,7 @@ logging.config.dictConfig({
     },
 })
 
-
+# APPEND_SLASH = True
+# APPEND_SLASH = False
+# SMART_APPEND_SLASH = True
+# SMART_APPEND_SLASH = False

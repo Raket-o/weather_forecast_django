@@ -9,22 +9,29 @@
 {% endblock %}
 
 {% block body %}
-    <h3>Hour:</h3>
+    <h3>List:</h3>
     <div>
         <ol>
             {% for city in cities_list %}
-<!--                <li>-->
+                <li>
                     <div class="list_obj">
                         <div class="list_obj_name">
-                            Страна- {{city.country}},
-                            область- {{city.admin1}},
-                            {{city.name}}
+                            <p>
+                                <a href="{% url 'forecast:forecast_near_future_view' latitude=city.latitude longitude=city.longitude %}">Country- {{city.country}}, area- {{city.admin1}}, {{city.name}}</a>
+                            </p>
                         </div>
                     </div>
-<!--                </li>-->
-<!--            {% empty %} Enter the city-->
+                </li>
+            {% empty %} Failure, try another city
             {% endfor %}
         </ol>
     </div>
+
+<div>
+    <br>
+    <a href="{% url 'forecast:city_form_view' %}">
+        <button class="button">Back</button>
+    </a>
+</div>
 
 {% endblock %}

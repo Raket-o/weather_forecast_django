@@ -23,9 +23,9 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from rest_framework.routers import DefaultRouter
 
 urlpatterns = [
+    path('forecast/', include('forecast.urls')),
     path('admin/', admin.site.urls),
     path('auth/', include('authorization.urls')),
-    path('/', include('forecast.urls')),
     # path('statistics/', include('customer_statistics.urls')),
     # path('services/', include('services.urls')),
     # path('advertising-companies/', include('advertising_companies.urls')),
@@ -35,7 +35,6 @@ urlpatterns = [
     # path("api/", include(routers.urls)),
     # path('api/', include('djoser.urls.authtoken')),
 ]
-
 
 
 if settings.DEBUG:

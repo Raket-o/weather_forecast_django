@@ -1,3 +1,4 @@
+.cache.sqlite
 mypy.ini
 text.txt
 .flake8

@@ -1,21 +1,21 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    Введите город
+    Enter name
 {% endblock %}
 
 {% block name_page %}
-    Введите город
+    Enter name
 {% endblock %}
 
 {% block body %}
-    <h3>Введите название города:</h3>
+    <h3>Enter the name of the city:</h3>
     <div>
         <form method="post">
             {% csrf_token %}
             {{ form.as_p }}
             <br>
-        <button type="submit" class="button">Поиск</button>
+        <button type="submit" class="button">Search</button>
         </form>
     </div>
 {% endblock %}

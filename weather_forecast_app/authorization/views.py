@@ -1,4 +1,4 @@
-from django.contrib.auth import logout
+from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import UserCreationForm
 from django.shortcuts import redirect
 from django.views.generic.base import View
@@ -13,7 +13,7 @@ class RegisterView(CreateView):
 
     def form_valid(self, form):
         response = super().form_valid(form)
-        Profile.objects.create(user=self.object)
+        # Profile.objects.create(user=self.object)
 
         username = form.cleaned_data.get("username")
         password = form.cleaned_data.get("password1")
