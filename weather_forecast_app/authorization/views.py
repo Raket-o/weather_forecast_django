@@ -9,7 +9,7 @@ from django.urls import reverse_lazy
 class RegisterView(CreateView):
     form_class = UserCreationForm
     template_name = "authorization/register.html"
-    success_url = reverse_lazy("forecast:request_city_from_user")
+    success_url = reverse_lazy("forecast:city_form_view")
 
     def form_valid(self, form):
         response = super().form_valid(form)

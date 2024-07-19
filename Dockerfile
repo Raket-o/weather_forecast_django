@@ -12,4 +12,4 @@ RUN pip install -r requirements.txt
 
 COPY .env .
 
-COPY django_crm .
+COPY weather_forecast_app .
