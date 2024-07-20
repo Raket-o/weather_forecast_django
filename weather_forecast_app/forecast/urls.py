@@ -24,7 +24,7 @@ urlpatterns = [
     # path("<str:name>/", cities_list_view, name="cities_list_view"),
     # path("cities/", cities_list_view, name="cities_list_view"),
     # path("cities/lat=<str:latitude>&lon=<str:longitude>/", forecast_near_future_view, name="forecast_near_future_view"),
-    path("cities/lat=<str:latitude>&lon=<str:longitude>/", forecast_near_future_view, name="forecast_near_future_view"),
+    path("cities/name=<str:name>&lat=<str:latitude>&lon=<str:longitude>/", forecast_near_future_view, name="forecast_near_future_view"),
     # path("cities/lat=53.20007&lon=50.15/", forecast_near_future_view, name="forecast_near_future_view"),
 
     # path("", AdvertisingCompaniesListView.as_view(), name="advertising_companies_list"),

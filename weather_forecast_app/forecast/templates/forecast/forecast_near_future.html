@@ -9,21 +9,44 @@
 {% endblock %}
 
 {% block body %}
-    <h3>Forecast for the near future:</h3>
-    <div>
-        <ol>
-            {% for data in forecast_weather %}
-{#                <li>#}
-                    <div class="list_obj">
-                        <div class="list_obj_name">
-                            <p>{{ data.date }} {{ data.hour }} {{ data.temperature }}</p>
+    <h3>Weather forecast in {{ name }}</h3>
+{#    <div>#}
+{#        <ol>#}
+            {% for k, v in forecast_weather.items %}
+                {{ k }}
+                <div class="data_group">
+
+                    {% for data in v%}
+{#                        <ol class="hour_temp">#}
+
+{#                        <div class="data_group">#}
+                        <div class="hour_temp">
+{#                        <div class="info_screen">#}
+{#                            <div>#}
+                            <div>
+                              {{ data.hour }}
+                            </div>
+                            <div>
+                              {{ data.temperature }}
+                            </div>
+{#                            </div>#}
+{#                        </div>#}
                         </div>
-                    </div>
+{#                        </ol>#}
+
+                    {% endfor %}
+                </div>
+{#                <li>#}
+{#                    <div class="list_obj">#}
+{#                        <div class="list_obj_name">#}
+{#                            <p>{{ data.date }} {{ data.hour }} {{ data.temperature }}</p>#}
+{#                        </div>#}
+{#                    </div>#}
 {#                </li>#}
 {#            {% empty %} Enter the city#}
             {% endfor %}
-        </ol>
-    </div>
+{#        </ol>#}
+{#    </div>#}
 
 <div>
     <br>

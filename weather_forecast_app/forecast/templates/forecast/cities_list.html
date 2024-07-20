@@ -17,7 +17,7 @@
                     <div class="list_obj">
                         <div class="list_obj_name">
                             <p>
-                                <a href="{% url 'forecast:forecast_near_future_view' latitude=city.latitude longitude=city.longitude %}">Country- {{city.country}}, area- {{city.admin1}}, {{city.name}}</a>
+                                <a href="{% url 'forecast:forecast_near_future_view' name=city.name latitude=city.latitude longitude=city.longitude %}">Country- {{city.country}}, area- {{city.admin1}}, {{city.name}}</a>
                             </p>
                         </div>
                     </div>

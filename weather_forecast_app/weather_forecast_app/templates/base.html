@@ -4,25 +4,41 @@
 
 <head>
     <meta charset="UTF-8">
-{#    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">#}
-{#    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>#}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
     <title>
         {% block title %}
         {% endblock %}
     </title>
 </head>
 
-<body>
-<!--<div class="workspace">-->
-    {% block body %}
-    {% endblock %}
-<!--</div>-->
+<header>
 
-<!--<footer>-->
-<!--    <div class="def_year">-->
-<!--        @2024-->
-<!--    </div>-->
-<!--</footer>-->
+</header>
+
+<body>
+    <div class="header">
+    </div>
+
+    <div class="workspace">
+        <div class="left_side">
+        </div>
+        <div class="info_screen">
+            {% block body %}
+            {% endblock %}
+        </div>
+        <div class="right_side">
+        </div>
+    </div>
+
+{#    {% block body %}#}
+{#    {% endblock %}#}
+
+<footer>
+    <div class="def_year">
+        @2024
+    </div>
+</footer>
 
 </body>
 </html>

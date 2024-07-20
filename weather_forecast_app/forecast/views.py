@@ -20,11 +20,12 @@ def forecast_near_future_view(request, **kwargs):
     # print("request===="*20)
     latitude = kwargs.get("latitude")
     longitude = kwargs.get("longitude")
+    name = kwargs.get("name")
     forecast_weather = get_forecast_weather(latitude, longitude)
     # print(forecast_weather)
 
     # print(latitude, longitude)
-    return render(request, template_name="forecast/forecast_near_future.html", context={"forecast_weather": forecast_weather})
+    return render(request, template_name="forecast/forecast_near_future.html", context={"name": name, "forecast_weather": forecast_weather})
     # return reverse_lazy(request, "forecast:forecast_near_future_view", context={"forecast_weather": forecast_weather})
     # return request
 

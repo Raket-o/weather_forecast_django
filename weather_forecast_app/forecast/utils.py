@@ -103,14 +103,35 @@ def get_forecast_weather(lat: float, lon: float) -> list[dict[str, int | Any]]:
 
 
     result = []
+    result_dict = dict()
     for elem in zip(hourly_data.get("date"), hourly_data.get("temperature_2m")):
         date, hour = str(elem[0]).split(" ")
         hour = hour[:5]
         temperature = int(elem[1])
         # print(elem[0])
+        # result_dict[date] = (hour, temperature)
+        # result_dict.setdefault(date, 0)
+        # result_dict[date].add(tuple(hour, temperature))
         result.append({"date": date, "hour": hour, "temperature": temperature})
 
-    return result
+    for elem in result:
+        result_dict[elem["date"]] = []
+
+    data_list = []
+    for k, v in result_dict.items():
+        for elem in result:
+            if k == elem["date"]:
+                print((elem["hour"], elem["temperature"]))
+                data_list.append({"hour": elem["hour"], "temperature": elem["temperature"]})
+
+            else:
+                result_dict[k] = data_list
+        data_list = []
+
+
+    from pprint import pprint
+    pprint(result_dict)
+    return result_dict
 
 
 
