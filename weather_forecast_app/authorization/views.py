@@ -13,8 +13,6 @@ class RegisterView(CreateView):
 
     def form_valid(self, form):
         response = super().form_valid(form)
-        # Profile.objects.create(user=self.object)
-
         username = form.cleaned_data.get("username")
         password = form.cleaned_data.get("password1")
 
@@ -24,10 +22,6 @@ class RegisterView(CreateView):
             password=password,
         )
         login(request=self.request, user=user)
-
-        from django.shortcuts import render, HttpResponseRedirect
-        # return HttpResponseRedirect(self.request.META['HTTP_REFERER'])
-        # return HttpResponseRedirect(response)
         return response
 
 
