@@ -1,9 +1,11 @@
 from django.shortcuts import render, HttpResponseRedirect
+from django.contrib.auth.mixins import UserPassesTestMixin
 
 # Create your views here.
 from .models import City
 from .forms import CityForm
 from django.urls import reverse_lazy
+from django.contrib.auth.decorators import login_required
 
 from django.views.generic import (
     CreateView,
@@ -16,6 +18,7 @@ from django.views.generic import (
 from .utils import get_forecast_weather, get_geo_location_by_name_city
 
 
+@login_required
 def forecast_near_future_view(request, **kwargs):
     # print("request===="*20)
     latitude = round(float(kwargs.get("latitude")), 2)
@@ -111,7 +114,12 @@ def forecast_near_future_view(request, **kwargs):
 #     )
 
 
-class CityFormView(CreateView):
+class CityFormView(UserPassesTestMixin, CreateView):
+    def test_func(self):
+        user = self.request.user
+        if user.is_authenticated:
+            return True
+
     model = City
     form_class = CityForm
     # success_url = reverse_lazy("forecast:cities_list_view")
