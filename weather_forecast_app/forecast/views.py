@@ -18,11 +18,15 @@ from .utils import get_forecast_weather, get_geo_location_by_name_city
 
 def forecast_near_future_view(request, **kwargs):
     # print("request===="*20)
-    latitude = kwargs.get("latitude")
-    longitude = kwargs.get("longitude")
+    latitude = round(float(kwargs.get("latitude")), 2)
+    longitude = round(float(kwargs.get("longitude")), 2)
     name = kwargs.get("name")
+    # name = str(kwargs.get("name")).encode()
+
+    # name = name
     forecast_weather = get_forecast_weather(latitude, longitude)
-    # print(forecast_weather)
+    print("+="*50,type(request),request)
+    # print("+="*50,type(forecast_weather),forecast_weather)
 
     # print(latitude, longitude)
     return render(request, template_name="forecast/forecast_near_future.html", context={"name": name, "forecast_weather": forecast_weather})

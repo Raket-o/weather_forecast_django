@@ -140,6 +140,27 @@ a:hover {
 }
 
 .data_group {
+    margin-bottom: 3%;
+    padding: 1%;
+
+    /*display: flex;*/
+    /*flex-direction: row;*/
+    /*min-height: 100%;*/
+    /*width: 200px;*/
+    /*border-color: rgba(231, 234, 236);*/
+
+    /*width: 100%;*/
+    width: auto;
+    /*height: 150px;*/
+    /*height: 100%;*/
+    /*border-radius: 20px;*/
+
+    /*height: 50px;*/
+    /*flex-grow: 15;*/
+    /*border: 1px solid black;*/
+}
+
+.date_hour_temp {
     display: flex;
     flex-direction: row;
     /*min-height: 100%;*/
@@ -153,14 +174,16 @@ a:hover {
 
     /*height: 50px;*/
     /*flex-grow: 15;*/
+    /*border: 1px solid black;*/
 }
 
 .hour_temp {
-    /*overflow-y: auto;*/
+    /*overflow-x: auto;*/
     /*height: auto;*/
     height: 100px;
     /*height: 100vh;*/
-    padding: 15%;
+    /*padding: 15%;*/
+    padding: 25%;
     text-align: center;
     /*background-color: rgba(231, 234, 236);*/
     width: 60px;
@@ -172,7 +195,9 @@ a:hover {
     font-size: 16px;
     /*border-radius: 20px;*/
     border-radius: 10%;
-    border-color: rgba(231, 234, 236);
+    /*border-color: rgba(231, 234, 236);*/
+    /*border: 1px solid black;*/
+
 }
 
 /*.menu_nav > div {*/
@@ -266,13 +291,13 @@ footer {
     background-color: rgba(4, 170, 109, 0.65);
 }
 
-/*.button_blue {*/
-/*    background-color: #008CBA;*/
-/*}*/
+.button_blue {
+    background-color: #008CBA;
+}
 
-/*.button_blue:hover {*/
-/*    background-color: rgba(0, 140, 186, 0.65);*/
-/*}*/
+.button_blue:hover {
+    background-color: rgba(0, 140, 186, 0.65);
+}
 
 /*.button_red {*/
 /*    background-color: #ac2721;*/

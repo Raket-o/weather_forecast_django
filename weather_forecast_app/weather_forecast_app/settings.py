@@ -83,7 +83,7 @@ INSTALLED_APPS = [
 
 
 MIDDLEWARE = [
-    "weather_forecast_app.middleware.CommonMiddlewareAppendSlashWithoutRedirect",
+    # "weather_forecast_app.middleware.CommonMiddlewareAppendSlashWithoutRedirect",
     "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -212,8 +212,8 @@ REST_FRAMEWORK = {
 
 # LOGIN_REDIRECT_URL
 
-LOGIN_REDIRECT_URL = reverse_lazy("forecast:request_city_from_user")
-LOGIN_URL = reverse_lazy("authorization:login")
+LOGIN_REDIRECT_URL = reverse_lazy("forecast:city_form_view")
+# LOGIN_URL = reverse_lazy("authorization:login")
 
 
 # Logger

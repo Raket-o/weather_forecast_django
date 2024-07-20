@@ -24,6 +24,10 @@ class RegisterView(CreateView):
             password=password,
         )
         login(request=self.request, user=user)
+
+        from django.shortcuts import render, HttpResponseRedirect
+        # return HttpResponseRedirect(self.request.META['HTTP_REFERER'])
+        # return HttpResponseRedirect(response)
         return response
 
 

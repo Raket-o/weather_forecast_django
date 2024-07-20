@@ -10,11 +10,13 @@
 
 {% block body %}
     <h3>Weather forecast in {{ name }}</h3>
-{#    <div>#}
+{#    <div style="border: 1px solid black;">#}
 {#        <ol>#}
             {% for k, v in forecast_weather.items %}
-                {{ k }}
                 <div class="data_group">
+
+                {{ k }}
+                <div class="date_hour_temp">
 
                     {% for data in v%}
 {#                        <ol class="hour_temp">#}
@@ -27,7 +29,7 @@
                               {{ data.hour }}
                             </div>
                             <div>
-                              {{ data.temperature }}
+                              {{ data.temperature }}°
                             </div>
 {#                            </div>#}
 {#                        </div>#}
@@ -41,7 +43,7 @@
 {#                        <div class="list_obj_name">#}
 {#                            <p>{{ data.date }} {{ data.hour }} {{ data.temperature }}</p>#}
 {#                        </div>#}
-{#                    </div>#}
+                    </div>
 {#                </li>#}
 {#            {% empty %} Enter the city#}
             {% endfor %}
@@ -50,9 +52,13 @@
 
 <div>
     <br>
-    <a href="{% url 'forecast:city_form_view' %}">
-        <button class="button">Back</button>
+{#    <a href="{% url 'forecast:city_form_view' %}">#}
+        <a href="javascript:history.back()">
+        <button class="button button_blue">Back</button>
     </a>
 </div>
+
+
+{#    <a href="javascript:history.back()">Go Back</a>#}
 
 {% endblock %}

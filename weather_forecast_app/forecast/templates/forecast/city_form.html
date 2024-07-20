@@ -15,7 +15,14 @@
             {% csrf_token %}
             {{ form.as_p }}
             <br>
-        <button type="submit" class="button">Search</button>
+        <button type="submit" class="button button_blue">Search</button>
         </form>
     </div>
+
+    <div>
+        <br>
+        <a href="{% url 'authorization:logout' %}">
+            <button class="button button_blue">Logout</button>
+        </a>
+        </div>
 {% endblock %}

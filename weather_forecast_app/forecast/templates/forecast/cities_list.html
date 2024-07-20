@@ -9,7 +9,7 @@
 {% endblock %}
 
 {% block body %}
-    <h3>List:</h3>
+    <h3>List of cities:</h3>
     <div>
         <ol>
             {% for city in cities_list %}
@@ -30,7 +30,7 @@
 <div>
     <br>
     <a href="{% url 'forecast:city_form_view' %}">
-        <button class="button">Back</button>
+        <button class="button button_blue">Back</button>
     </a>
 </div>
 
