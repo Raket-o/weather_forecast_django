@@ -6,9 +6,35 @@
 
 {% block body %}
     <h1>Register</h1>
-    <form method="post">
+{#    <form method="post">#}
+{#        {% csrf_token %}#}
+{#        {{ form.as_p }}#}
+{#        <input type="submit" value="Register">#}
+{#    </form>#}
+    <form method="POST" novalidate>
         {% csrf_token %}
-        {{ form.as_p }}
-        <input type="submit" value="Register">
+        <h2>Sign Up</h2>
+
+        {% for field in form %}
+        <p>
+            {% if field.errors %}
+            <ul class="errorlist">
+                {% for error in field.errors %}
+                <li>{{ error }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            {{ field.label_tag }} {{ field }}
+        </p>
+        {% endfor %}
+        <input class="button" type="submit" value="Register" />
+{#    <div>#}
+{#    <br>#}
+{#    <a href="{% url 'forecast:city_form_view' %}">#}
+{#        <button class="button">Back</button>#}
+{#    </a>#}
+{#</div>#}
     </form>
+
+
 {% endblock %}
