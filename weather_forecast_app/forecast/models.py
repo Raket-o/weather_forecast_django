@@ -12,6 +12,7 @@ class City(models.Model):
     name = models.CharField(max_length=50, blank=False)
     latitude = models.FloatField(null=True, blank=True)
     longitude = models.FloatField(null=True, blank=True)
+    count = models.IntegerField(default=0)
     user_id = models.ManyToManyField(User)
 
     def to_json(self):

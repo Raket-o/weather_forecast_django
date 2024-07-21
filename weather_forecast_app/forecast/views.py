@@ -27,27 +27,34 @@ class ForecastNearFutureView(UserPassesTestMixin, View):
             return True
 
     def get(self, request, **kwargs):
-        # latitude = round(float(kwargs.get("latitude")), 2)
         latitude = round(float(kwargs.get("latitude")), 0)
-        # latitude = int(kwargs.get("latitude"), 0)
-        # longitude = round(float(kwargs.get("longitude")), 2)
         longitude = round(float(kwargs.get("longitude")), 0)
-        # longitude = int(kwargs.get("longitude"), 0)
         name = kwargs.get("name")
-        print("+=-"*50, latitude, longitude)
 
-        city_obj = City(
-            name=name,
-            latitude=latitude,
-            longitude=longitude,
-        )
+        city_obj = City.objects.filter(name=name)
+        try:
+            city_obj = city_obj[0]
+        except IndexError:
+            pass
+
+        if city_obj:
+            city_obj.count += 1
+
+        else:
+            city_obj = City(
+                name=name,
+                latitude=latitude,
+                longitude=longitude,
+                count = 1,
+            )
+
         city_obj.save()
-        current_user = User.objects.filter(id=self.request.user.pk)
-        city_obj.user_id.set(current_user)
+
+        user_current = User.objects.filter(id=self.request.user.pk)
+        city_obj.user_id.set(user_current)
         forecast_weather = get_forecast_weather(latitude, longitude)
 
         name = str(name)
-        # name = name.encode('utf-8')
         return render(request, template_name="forecast/forecast_near_future.html",
                       context={"name": name, "forecast_weather": forecast_weather})
 
@@ -90,8 +97,7 @@ class CityFormView(UserPassesTestMixin, CreateView):
 
 
 class CityCountList(ModelViewSet):
-    # queryset = City.objects.all()
-    queryset = City.objects.all().values("name", "latitude", "longitude").annotate(count=Count("name", distinct=True)).order_by("-name")
+    queryset = City.objects.all().order_by("-count", "name")
     serializer_class = CitySerializers
     filter_backends = [
         SearchFilter,
@@ -100,12 +106,15 @@ class CityCountList(ModelViewSet):
     ]
     search_fields = [
         "name",
+        "count"
     ]
     filterset_fields = [
         "name",
+        "count"
     ]
     ordering_fields = [
         "name",
+        "count"
     ]
 
     def create(self, request, *args, **kwargs):
@@ -117,40 +126,8 @@ class CityCountList(ModelViewSet):
     def update(self, request, *args, **kwargs):
         return Response({'error': 'The method is not available'}, status=status.HTTP_403_FORBIDDEN)
 
-
     def partial_update(self, request, *args, **kwargs):
         return Response({'error': 'The method is not available'}, status=status.HTTP_403_FORBIDDEN)
 
     def destroy(self, request, *args, **kwargs):
         return Response({'error': 'The method is not available'}, status=status.HTTP_403_FORBIDDEN)
-
-
-#     def
-
-# class CityCountList(object):
-#     def get_serializer(self, *args, **kwargs):
-#         """ if an array is passed, set serializer to many """
-#         if isinstance(kwargs.get('data', {}), list):
-#             kwargs['many'] = True
-#         return super(CreateListModelMixin, self).get_serializer(*args, **kwargs)
-#
-#
-# class CityCountList(CreateListModelMixin, generics.CreateAPIView):
-#     serializer_class = CitySerializers
-
-
-from rest_framework import generics
-# # class CityCountList(generics.ListCreateAPIView):
-# #     queryset = City.objects.all()
-# #     serializer_class = CitySerializers
-#
-# class CityCountList(generics.ListCreateAPIView):
-#     queryset = City.objects.all()
-#     serializer_class = CitySerializers
-#     # permission_classes = [IsAdminUser]
-#
-#     def list(self, request):
-#         # Note the use of `get_queryset()` instead of `self.queryset`
-#         queryset = self.get_queryset()
-#         serializer = CitySerializers(queryset, many=True)
-#         return Response(serializer.data)
