@@ -19,7 +19,6 @@ from django.urls import reverse_lazy
 
 from env_data import db_host, db_name, db_password, db_port, db_user, log_level
 
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
