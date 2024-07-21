@@ -1,5 +1,5 @@
-from django.db import models
 from django.contrib.auth.models import User
+from django.db import models
 
 
 class City(models.Model):
@@ -16,8 +16,8 @@ class City(models.Model):
 
     def to_json(self):
         return {
-            "id":self.id,
+            "id": self.id,
             "name": self.name,
-            "latitude":self.latitude,
+            "latitude": self.latitude,
             "longitude": self.longitude
         }

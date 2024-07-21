@@ -1,17 +1,15 @@
-from django.shortcuts import render
 from django.contrib.auth.mixins import UserPassesTestMixin
-
 from django.contrib.auth.models import User
+from django.shortcuts import render
 from django.views.generic import CreateView, View
-
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import status
 from rest_framework.filters import OrderingFilter, SearchFilter
 from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
 
-from .models import City
 from .forms import CityForm
+from .models import City
 from .serializers import CitySerializers
 from .utils import get_forecast_weather, get_geo_location_by_name_city
 
@@ -50,8 +48,11 @@ class ForecastNearFutureView(UserPassesTestMixin, View):
         city_obj.user_id.set(user_current)
         forecast_weather = get_forecast_weather(latitude, longitude)
 
-        return render(request, template_name="forecast/forecast_near_future.html",
-                      context={"name": name, "forecast_weather": forecast_weather})
+        return render(
+            request,
+            template_name="forecast/forecast_near_future.html",
+            context={"name": name, "forecast_weather": forecast_weather}
+        )
 
 
 class HistoryView(UserPassesTestMixin, View):
@@ -113,16 +114,31 @@ class CityCountList(ModelViewSet):
     ]
 
     def create(self, request, *args, **kwargs):
-        return Response({'error': 'The method is not available'}, status=status.HTTP_403_FORBIDDEN)
+        return Response(
+            {'error': 'The method is not available'},
+            status=status.HTTP_403_FORBIDDEN
+        )
 
     def retrieve(self, request, *args, **kwargs):
-        return Response({'error': 'The method is not available'}, status=status.HTTP_403_FORBIDDEN)
+        return Response(
+            {'error': 'The method is not available'},
+            status=status.HTTP_403_FORBIDDEN
+        )
 
     def update(self, request, *args, **kwargs):
-        return Response({'error': 'The method is not available'}, status=status.HTTP_403_FORBIDDEN)
+        return Response(
+            {'error': 'The method is not available'},
+            status=status.HTTP_403_FORBIDDEN
+        )
 
     def partial_update(self, request, *args, **kwargs):
-        return Response({'error': 'The method is not available'}, status=status.HTTP_403_FORBIDDEN)
+        return Response(
+            {'error': 'The method is not available'},
+            status=status.HTTP_403_FORBIDDEN
+        )
 
     def destroy(self, request, *args, **kwargs):
-        return Response({'error': 'The method is not available'}, status=status.HTTP_403_FORBIDDEN)
+        return Response(
+            {'error': 'The method is not available'},
+            status=status.HTTP_403_FORBIDDEN
+        )

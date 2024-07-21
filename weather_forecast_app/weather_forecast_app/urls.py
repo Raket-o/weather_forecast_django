@@ -19,9 +19,8 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.urls import include, path
-from rest_framework.routers import DefaultRouter
-
 from forecast.views import CityCountList
+from rest_framework.routers import DefaultRouter
 
 routers = DefaultRouter()
 routers.register("forecast", CityCountList, basename='city_count_list')

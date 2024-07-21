@@ -7,4 +7,3 @@ class CityForm(ModelForm):
     class Meta:
         model = City
         fields = "name",
-

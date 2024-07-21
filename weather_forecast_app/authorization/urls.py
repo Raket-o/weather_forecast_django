@@ -3,7 +3,6 @@ from django.urls import path
 
 from .views import LogoutView, RegisterView
 
-
 app_name = "authorization"
 
 urlpatterns = [

@@ -1,9 +1,8 @@
 from typing import Any
 
-import requests
-
 import openmeteo_requests
 import pandas as pd
+import requests
 import requests_cache
 from retry_requests import retry
 
@@ -52,6 +51,7 @@ def get_forecast_weather(lat: float, lon: float) -> dict[Any, Any]:
 
     for elem in result:
         result_dict.setdefault(elem["date"], [])
-        result_dict[elem["date"]].append({"hour": elem["hour"], "temperature": elem["temperature"]})
+        (result_dict[elem["date"]].
+         append({"hour": elem["hour"], "temperature": elem["temperature"]}))
 
     return result_dict

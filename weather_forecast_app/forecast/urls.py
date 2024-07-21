@@ -1,10 +1,6 @@
 from django.urls import path
-from .views import (
-    CityFormView,
-    ForecastNearFutureView,
-    HistoryView,
-)
 
+from .views import CityFormView, ForecastNearFutureView, HistoryView
 
 app_name = "forecast"
 
