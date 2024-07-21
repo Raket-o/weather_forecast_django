@@ -19,5 +19,6 @@ class City(models.Model):
             "id": self.id,
             "name": self.name,
             "latitude": self.latitude,
-            "longitude": self.longitude
+            "longitude": self.longitude,
+            "count": self.count,
         }

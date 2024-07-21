@@ -1,0 +1,587 @@
+[
+  {
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+      "name": "Can add log entry",
+      "content_type": 1,
+      "codename": "add_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+      "name": "Can change log entry",
+      "content_type": 1,
+      "codename": "change_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+      "name": "Can delete log entry",
+      "content_type": 1,
+      "codename": "delete_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+      "name": "Can view log entry",
+      "content_type": 1,
+      "codename": "view_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+      "name": "Can add permission",
+      "content_type": 2,
+      "codename": "add_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+      "name": "Can change permission",
+      "content_type": 2,
+      "codename": "change_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+      "name": "Can delete permission",
+      "content_type": 2,
+      "codename": "delete_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+      "name": "Can view permission",
+      "content_type": 2,
+      "codename": "view_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+      "name": "Can add group",
+      "content_type": 3,
+      "codename": "add_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+      "name": "Can change group",
+      "content_type": 3,
+      "codename": "change_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+      "name": "Can delete group",
+      "content_type": 3,
+      "codename": "delete_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+      "name": "Can view group",
+      "content_type": 3,
+      "codename": "view_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+      "name": "Can add user",
+      "content_type": 4,
+      "codename": "add_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+      "name": "Can change user",
+      "content_type": 4,
+      "codename": "change_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+      "name": "Can delete user",
+      "content_type": 4,
+      "codename": "delete_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+      "name": "Can view user",
+      "content_type": 4,
+      "codename": "view_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+      "name": "Can add content type",
+      "content_type": 5,
+      "codename": "add_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+      "name": "Can change content type",
+      "content_type": 5,
+      "codename": "change_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+      "name": "Can delete content type",
+      "content_type": 5,
+      "codename": "delete_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+      "name": "Can view content type",
+      "content_type": 5,
+      "codename": "view_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+      "name": "Can add session",
+      "content_type": 6,
+      "codename": "add_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+      "name": "Can change session",
+      "content_type": 6,
+      "codename": "change_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+      "name": "Can delete session",
+      "content_type": 6,
+      "codename": "delete_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+      "name": "Can view session",
+      "content_type": 6,
+      "codename": "view_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+      "name": "Can add city",
+      "content_type": 7,
+      "codename": "add_city"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+      "name": "Can change city",
+      "content_type": 7,
+      "codename": "change_city"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+      "name": "Can delete city",
+      "content_type": 7,
+      "codename": "delete_city"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+      "name": "Can view city",
+      "content_type": 7,
+      "codename": "view_city"
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$lYyg9YkfxtHfO2J0nshL31$6ShLnW7q0Nc/jqbmPTCqQe1ctluy5kFEkyJWUNcPek4=",
+      "last_login": "2024-07-21T02:17:57.900Z",
+      "is_superuser": false,
+      "username": "user1",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-07-21T02:17:57.201Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$majago11UzTCNBj4jDSJmw$xu5lq9l9qfhKIeJcSBrzxYfPqcpX2qctMLtMBR/RUzw=",
+      "last_login": "2024-07-21T02:36:12.057Z",
+      "is_superuser": false,
+      "username": "user2",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-07-21T02:36:11.432Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$8DMbOscl1vE32L17SzrC2q$/aX7OUR8eMntsy16VI3o46kX4Y8Bg78S3GQevNmeOg0=",
+      "last_login": "2024-07-21T02:44:27.182Z",
+      "is_superuser": false,
+      "username": "user3",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-07-21T02:44:26.565Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 4,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$mU1tTPtGmCiT2KPxxXHPEe$5G1n3x5dEKMuj254pj6aEE3ZBotkUfBuRhrXAvk/bMI=",
+      "last_login": "2024-07-21T02:52:22.428Z",
+      "is_superuser": false,
+      "username": "user4",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-07-21T02:52:21.769Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 5,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$bIsAnGbLru0lt42WHLwdBN$Ry0o+dpXE6FYM+j6KL1R7/coQeL6U6DivZWPPeSbW8Q=",
+      "last_login": "2024-07-21T03:03:51.650Z",
+      "is_superuser": false,
+      "username": "user5",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-07-21T03:03:51.009Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 6,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$igzdWot65WYfSzgPKkFS9k$QbHuDjrAhL9xrcd4DItI47HFfS8P1O+C1q9tD9xZv8U=",
+      "last_login": "2024-07-21T03:25:44.788Z",
+      "is_superuser": false,
+      "username": "user6",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-07-21T03:05:14.522Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 7,
+    "fields": {
+      "password": "pbkdf2_sha256$720000$o9HndkPvyrsxbCylBSGcKs$8CnE8NIqMIsZ2gKA46ztpHVvrkbcNch2p4RUZqEZYfc=",
+      "last_login": "2024-07-21T04:18:00.637Z",
+      "is_superuser": false,
+      "username": "User7",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2024-07-21T04:17:53.283Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": {
+      "app_label": "admin",
+      "model": "logentry"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": {
+      "app_label": "auth",
+      "model": "permission"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": {
+      "app_label": "auth",
+      "model": "group"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": {
+      "app_label": "auth",
+      "model": "user"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": {
+      "app_label": "contenttypes",
+      "model": "contenttype"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": {
+      "app_label": "sessions",
+      "model": "session"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": {
+      "app_label": "forecast",
+      "model": "city"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "1z7aqesqavykrrahnqpgx5ipgfjh7y14",
+    "fields": {
+      "session_data": ".eJxVjMEOwiAQRP-FsyGwyNJ69O43kIUFqRqalPZk_Hdp0oMeZ96beQtP21r81tLiJxYX4cTptwsUn6nugB9U77OMc12XKchdkQdt8jZzel0P9--gUCt9PQwOnLIGDShmCxYzIgSNkYm0Go1yEIzBMYMGk2NHsedkQ3R4TlZ8vqs2NtQ:1sVO1I:0DNQbOSutSkYXsP_aqoxV3KxI9NDJLe78FFgV9OgAXQ",
+      "expire_date": "2024-08-04T04:18:00.639Z"
+    }
+  },
+  {
+    "model": "forecast.city",
+    "pk": 1,
+    "fields": {
+      "name": "Пенза",
+      "latitude": 53.0,
+      "longitude": 45.0,
+      "count": 3,
+      "user_id": [
+        2
+      ]
+    }
+  },
+  {
+    "model": "forecast.city",
+    "pk": 2,
+    "fields": {
+      "name": "Саратов",
+      "latitude": 52.0,
+      "longitude": 46.0,
+      "count": 2,
+      "user_id": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "forecast.city",
+    "pk": 3,
+    "fields": {
+      "name": "Воркута",
+      "latitude": 67.0,
+      "longitude": 64.0,
+      "count": 1,
+      "user_id": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "forecast.city",
+    "pk": 4,
+    "fields": {
+      "name": "Вологда",
+      "latitude": 59.0,
+      "longitude": 40.0,
+      "count": 1,
+      "user_id": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "forecast.city",
+    "pk": 5,
+    "fields": {
+      "name": "Анапа",
+      "latitude": 45.0,
+      "longitude": 37.0,
+      "count": 2,
+      "user_id": [
+        1
+      ]
+    }
+  },
+  {
+    "model": "forecast.city",
+    "pk": 6,
+    "fields": {
+      "name": "Махачкала",
+      "latitude": 43.0,
+      "longitude": 48.0,
+      "count": 1,
+      "user_id": [
+        3
+      ]
+    }
+  },
+  {
+    "model": "forecast.city",
+    "pk": 7,
+    "fields": {
+      "name": "Самара",
+      "latitude": 53.0,
+      "longitude": 50.0,
+      "count": 1,
+      "user_id": [
+        4
+      ]
+    }
+  },
+  {
+    "model": "forecast.city",
+    "pk": 8,
+    "fields": {
+      "name": "Anadarko",
+      "latitude": 35.0,
+      "longitude": -98.0,
+      "count": 1,
+      "user_id": [
+        5
+      ]
+    }
+  },
+  {
+    "model": "forecast.city",
+    "pk": 9,
+    "fields": {
+      "name": "Анадырь",
+      "latitude": 65.0,
+      "longitude": 178.0,
+      "count": 1,
+      "user_id": [
+        6
+      ]
+    }
+  },
+  {
+    "model": "forecast.city",
+    "pk": 10,
+    "fields": {
+      "name": "Чапаевск",
+      "latitude": 53.0,
+      "longitude": 50.0,
+      "count": 1,
+      "user_id": [
+        6
+      ]
+    }
+  },
+  {
+    "model": "forecast.city",
+    "pk": 11,
+    "fields": {
+      "name": "Челяба",
+      "latitude": 58.0,
+      "longitude": 56.0,
+      "count": 1,
+      "user_id": [
+        7
+      ]
+    }
+  }
+]
