@@ -20,9 +20,13 @@
     </div>
 
     <div>
+        <a href="{% url 'forecast:history_view' %}">
+            <button class="button button_blue">History</button>
+        </a>
+
         <br>
         <a href="{% url 'authorization:logout' %}">
             <button class="button button_blue">Logout</button>
         </a>
-        </div>
+    </div>
 {% endblock %}

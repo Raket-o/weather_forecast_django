@@ -22,11 +22,35 @@ from django.urls import include, path, re_path
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from rest_framework.routers import DefaultRouter
 
+from forecast.models import City
+from forecast.serializers import CitySerializers
+from rest_framework.generics import ListAPIView
+
+# from django.db.models import Count
+#
+# sql_query = """
+# SELECT forecast_city.name, forecast_city.latitude, forecast_city.longitude, count(*) as count
+# FROM forecast_city
+# GROUP BY forecast_city.name, forecast_city.latitude, forecast_city.longitude
+# ORDER BY count DESC, forecast_city.name;
+#         """
+# with connection.cursor() as cursor:
+#     cursor.execute(sql_query)
+#     results = cursor.fetchall()
+
+from forecast.views import CityCountList
+
+
+routers = DefaultRouter()
+routers.register("forecast", CityCountList, basename='city_count_list')
+
 urlpatterns = [
-    path('forecast/', include('forecast.urls')),
-    path('admin/', admin.site.urls),
-    # path('auth/', include('authorization.urls')),
     path('', include('authorization.urls')),
+    path('admin/', admin.site.urls),
+    path("api/", include(routers.urls)),
+    path('forecast/', include('forecast.urls')),
+
+    # path('auth/', include('authorization.urls')),
     # path('accounts/', include('authorization.urls')),
     # path('statistics/', include('customer_statistics.urls')),
     # path('services/', include('services.urls')),
@@ -36,7 +60,27 @@ urlpatterns = [
     #
     # path("api/", include(routers.urls)),
     # path('api/', include('djoser.urls.authtoken')),
+
+    # path(
+    #     'api/cities',
+    #     ListAPIView.as_view(
+    #         # queryset=City.objects.all(),
+    #         # queryset=City.objects.all().values("name", "latitude", "longitude").annotate(count=Count(["name", "latitude", "longitude",], distinct=True)).order_by(),
+    #         queryset=City.objects.all().values("name", "latitude", "longitude").
+    #             annotate(count=Count("id", distinct=True)).order_by("-"),
+    #         serializer_class=CitySerializers
+    #     ),
+    #     name='count_cities'
+    # )
 ]
+
+# cities_list = (City.objects.filter(user_id=self.request.user.pk).
+#                values("name", "latitude", "longitude").distinct().
+#                order_by("name"))
+# count = Project.objects.values('informationunit__username').distinct().count()
+# cities_list = (City.objects.filter(user_id=self.request.user.pk).
+#                values("name", "latitude", "longitude").distinct().
+#                order_by("name"))
 
 
 if settings.DEBUG:
