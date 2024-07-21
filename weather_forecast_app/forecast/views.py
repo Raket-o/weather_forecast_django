@@ -1,12 +1,8 @@
-from django.db.models import Count
-
-from django.shortcuts import render, HttpResponseRedirect
+from django.shortcuts import render
 from django.contrib.auth.mixins import UserPassesTestMixin
 
-from django.urls import reverse_lazy
-from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
-from django.views.generic import CreateView, ListView, View
+from django.views.generic import CreateView, View
 
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import status
@@ -45,7 +41,7 @@ class ForecastNearFutureView(UserPassesTestMixin, View):
                 name=name,
                 latitude=latitude,
                 longitude=longitude,
-                count = 1,
+                count=1,
             )
 
         city_obj.save()
@@ -54,7 +50,6 @@ class ForecastNearFutureView(UserPassesTestMixin, View):
         city_obj.user_id.set(user_current)
         forecast_weather = get_forecast_weather(latitude, longitude)
 
-        name = str(name)
         return render(request, template_name="forecast/forecast_near_future.html",
                       context={"name": name, "forecast_weather": forecast_weather})
 

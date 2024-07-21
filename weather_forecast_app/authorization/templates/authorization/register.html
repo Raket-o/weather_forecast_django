@@ -6,12 +6,6 @@
 
 {% block body %}
     <h1>Register</h1>
-{#    <form method="post">#}
-{#        {% csrf_token %}#}
-{#        {{ form.as_p }}#}
-{#        <input type="submit" value="Register">#}
-{#    </form>#}
-
     <form method="POST" novalidate>
         {% csrf_token %}
         <h2>Sign Up</h2>
@@ -28,15 +22,12 @@
             {{ field.label_tag }} {{ field }}
         </p>
         {% endfor %}
-{#        <input class="button" type="submit" value="Register" />#}
         <button class="button" type="submit">Register</button>
     </form>
 
     <div>
         <br>
         <a href="{% url 'authorization:login' %}">
-{#            <input class="button button_blue" value="Back"/>#}
-
             <button class="button button_blue">Login</button>
         </a>
     </div>

@@ -17,7 +17,7 @@ from pathlib import Path
 
 from django.urls import reverse_lazy
 
-from env_data import db_host, db_name, db_password, db_port, db_user, debug, log_level
+from env_data import db_host, db_name, db_password, db_port, db_user, log_level
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -31,7 +31,6 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = debug
 DEBUG = os.getenv('DEBUG') != 'False'
 
 ALLOWED_HOSTS = [
@@ -68,22 +67,13 @@ INSTALLED_APPS = [
     "whitenoise.runserver_nostatic",
     "rest_framework",
     "django_filters",
-    # "rest_framework.authtoken",
-    # "djoser",
 
     "authorization.apps.AuthorizationConfig",
     "forecast.apps.ForecastConfig",
-    # "authorization.apps.AuthorizationConfig",
-    # "customer_statistics.apps.CustomerStatisticsConfig",
-    # "services.apps.ServicesConfig",
-    # "advertising_companies.apps.AdvertisingCompaniesConfig",
-    # "clients.apps.ClientsConfig",
-    # "contracts.apps.ContractsConfig",
 ]
 
 
 MIDDLEWARE = [
-    # "weather_forecast_app.middleware.CommonMiddlewareAppendSlashWithoutRedirect",
     "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
@@ -93,9 +83,6 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "debug_toolbar.middleware.DebugToolbarMiddleware",
-
-    # "CommonMiddleware",
-
 ]
 
 ROOT_URLCONF = "weather_forecast_app.urls"
@@ -143,7 +130,6 @@ CACHES = {
 }
 CACHE_SECONDS = 60
 
-
 # Password validation
 # https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
 
@@ -185,15 +171,10 @@ if DEBUG:
 else:
     STATIC_ROOT = os.path.join(BASE_DIR, "weather_forecast_app", "templates", "static")
 
-# MEDIA_URL = "/media/"
-# MEDIA_ROOT = BASE_DIR / "uploads"
-
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
-
 
 # Django_restframework
 
@@ -206,7 +187,6 @@ REST_FRAMEWORK = {
     "DEFAULT_FILTER_BACKENDS": [
         "django_filters.rest_framework.DjangoFilterBackend"
     ]
-    # 'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema'
 }
 
 
@@ -239,8 +219,3 @@ logging.config.dictConfig({
         },
     },
 })
-
-# APPEND_SLASH = True
-# APPEND_SLASH = False
-# SMART_APPEND_SLASH = True
-# SMART_APPEND_SLASH = False
